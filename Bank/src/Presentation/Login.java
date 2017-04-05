@@ -5,6 +5,7 @@
  */
 package Presentation;
 
+import DataOperation.Employees;
 import Business.*;
 import java.awt.Color;
 import java.awt.event.WindowEvent;
@@ -142,7 +143,6 @@ public class Login extends javax.swing.JFrame {
        username=jTextField2.getText();
        password=jPasswordField1.getText();
        Logare l=new Logare();
-       Employees e=new Employees(username,password);
             if(l.logareEmployee(username,password)!=null){
                 String[] str=l.logareEmployee(username,password).toString().split(",");
                 data1.setType(str[1]);

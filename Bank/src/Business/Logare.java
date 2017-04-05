@@ -18,17 +18,19 @@ import java.util.logging.Logger;
 public class Logare {
     public StringBuilder logareEmployee(String userName,String parola)
     {
-        EmployeeData emp=new EmployeeData();
-        StringBuilder builder = new StringBuilder();
-        if(emp.readEmployee(userName)!=null){
-            String[] s=emp.readEmployee(userName).toString().split(",");
-            if(s[2].equals(parola))
-            {
-                builder.append(s[0]);
-                builder.append(",");
-                builder.append(s[3]);
-                return builder;
-            }
+        EmployeeMapper emp=new EmployeeMapper();
+        EmployeeValidator ev=new EmployeeValidator();
+        Employees e=new Employees();
+        StringBuilder s=new StringBuilder();
+        if(ev.validare(userName, parola)){
+            e=emp.readEmployee(userName);
+            if(e!=null)
+                if(e.getUsername().equals(userName) && e.getPassword().equals(parola)){
+                    s.append(e.getIdEmployee());
+                    s.append(",");
+                    s.append(e.getUserType());
+                    return s;
+                }
         }
         return null;
     }

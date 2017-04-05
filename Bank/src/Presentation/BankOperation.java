@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -21,6 +22,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -60,6 +62,8 @@ public class BankOperation extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -113,42 +117,48 @@ public class BankOperation extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "CNP", "NUME", "ID_CARD", "ADRESA"
+                "NUME", "ID_CARD", "ADRESA"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        jLabel9.setText("jLabel9");
+
+        jTextField8.setText("jTextField8");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel9))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,17 +167,20 @@ public class BankOperation extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -405,22 +418,18 @@ public SharedData data;
         int IdCard=0;
         String adressa=null;
         int ID_Employee=0;
-        ClientInfo ci=new ClientInfo();
+        ClientManager cm=new ClientManager();
         data=new SharedData();
         CNP=jTextField1.getText();
-        Pattern p = Pattern.compile("([a-z])");
-        Matcher m =null;
-        if(CNP.length()==13 && p.matcher(jTextField1.getText()).find()!=true){
         if(jTextField2.isVisible() || jTextField4.isVisible()){
         Nume=jTextField2.getText();
         IdCard = 1 + (int)(Math.random() * 100000); 
-        //IdCard=Integer.parseInt(jTextField3.getText());
         adressa=jTextField4.getText();
         }
         ID_Employee=data.getId_Employee();
-        Client c1=new Client(Nume, IdCard, CNP, adressa);
         if(jButton1.getText().equals("AddClient")){
-        if(ci.addClient(c1,ID_Employee))
+        if(!Nume.equals("") &&  !CNP.equals("") &&  !adressa.equals("") &&  ID_Employee!=0){
+        if(cm.addClient(Nume, IdCard, CNP, adressa, ID_Employee))
         {
             jLabel1.setText("CNP");
             jLabel2.setText("AmountMoney");
@@ -439,8 +448,12 @@ public SharedData data;
             optiuni();
         }
         }
+        else
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+        }
         if(jButton1.getText().equals("UpdateClient")){
-          if(ci.updateClient(c1,ID_Employee))
+        if(!Nume.equals("") &&   !CNP.equals("") &&  !adressa.equals("") && ID_Employee!=0){
+          if(cm.updateClient(Nume, IdCard, CNP, adressa, ID_Employee))
         {
             jLabel1.setText("CNP");
             jLabel2.setText("AmountMoney");
@@ -457,26 +470,26 @@ public SharedData data;
         {
             JOptionPane.showMessageDialog(this, "Nu s-a realizat update");
             optiuni();
-        }  
-        }
-        if(jButton1.getText().equals("Afisare")){
-            if(CNP.equals("")){
-            ArrayList<Client> c=new ArrayList<Client>();
-            c=ci.printClients();
-            DefaultTableModel model= (DefaultTableModel)jTable1.getModel();
-            for(Client client :c )
-            model.addRow(new Object[]{client.getCnp(),client.getNume(),String.valueOf(client.getIdCard()),client.getAdress()}); 
-            }
-            else{
-            Client c=new Client();
-            c=ci.printClient(CNP,ID_Employee);
-            DefaultTableModel model= (DefaultTableModel)jTable1.getModel();
-            model.addRow(new Object[]{c.getCnp(),c.getNume(),String.valueOf(c.getIdCard()),c.getAdress()});
-            }
-        }
+        } 
         }
         else
-            JOptionPane.showMessageDialog(this, "CNP GRESIT");
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+        }
+        if(jButton1.getText().equals("Afisare")){
+            if(!CNP.equals("")){
+            ArrayList<ArrayList<String>> c=cm.printClients();
+            DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+            for(ArrayList<String> client :c )
+            model.addRow(new Object[]{client.get(0),String.valueOf(client.get(1)),client.get(2)}); 
+            }
+            else{
+            ArrayList<String> cli=new ArrayList<String>();
+            cli=cm.printClient(CNP,ID_Employee);
+            DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+            model.addRow(new Object[]{cli.get(0),String.valueOf(cli.get(1)),cli.get(2)});
+            }
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -484,23 +497,19 @@ public SharedData data;
         String IdNumberAcc=null;
         float money=0.0f;
         int idType=0;
-        IdNumberAcc="RO"+(10000000 + (int)(Math.random() * 1000000000))+"BT";
-        AccountInfo ai=new AccountInfo();
         data=new SharedData();
-        Pattern p = Pattern.compile("([a-z])");
-        Matcher m =null;
-        if(jTextField1.getText().length()==13 && p.matcher(jTextField1.getText()).find()!=true && p.matcher(jTextField2.getText()).find()!=true && p.matcher(jTextField4.getText()).find()!=true){
         CNP=jTextField1.getText();
         money=Float.parseFloat(jTextField2.getText());
         if(jTextField4.isVisible()==true){
         idType=Integer.parseInt(jTextField4.getText());
         }
+        AccountManager am=new AccountManager();
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-            Date today = Calendar.getInstance().getTime();        
-            String reportDate = df.format(today);
-        Account a1=new Account(IdNumberAcc,money,CNP,reportDate,idType);
+        Date today = Calendar.getInstance().getTime();        
+        String reportDate = df.format(today);
         if(jButton2.getText().equals("AddAccount")){
-        if(ai.addAccount(a1,data.getId_Employee()))
+        if(money!=0 &&  !reportDate.equals("") &&  !CNP.equals("") && idType!=0){
+        if(am.addAccount(money, reportDate, CNP, idType, data.getId_Employee()))
         {
             JOptionPane.showMessageDialog(this, "Account adugat");
             jTextField1.setText("");
@@ -513,15 +522,20 @@ public SharedData data;
             JOptionPane.showMessageDialog(this, "Account exista");
             optiuni();
         }
-         }
         }
         else
-            JOptionPane.showMessageDialog(this, "Gresala");
-        if(p.matcher(jTextField1.getText()).find() && p.matcher(jTextField2.getText()).find()!=true){
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+         }
          IdNumberAcc=jTextField1.getText();
          money=Float.parseFloat(jTextField2.getText());
+         CNP=jTextField1.getText();
+         if(jTextField4.isVisible()==true){
+        idType=Integer.parseInt(jTextField4.getText());
+        }
+         String idAcc=jTextField8.getText();
          if(jButton2.getText().equals("UpdateAccount")){
-            if(ai.updateAccount(IdNumberAcc, money, data.getId_Employee()))
+         if(!idAcc.equals("") && money!=0 &&  !reportDate.equals("") &&  !CNP.equals("") && idType!=0){
+            if(am.updateAccount(idAcc, idAcc, money, reportDate, CNP, idType, data.getId_Employee()))
         {
             JOptionPane.showMessageDialog(this, "Account update");
             jTextField1.setText("");
@@ -535,15 +549,16 @@ public SharedData data;
             optiuni();
         }
          }
-        }else
-            JOptionPane.showMessageDialog(this, "Gresala");
-         if(p.matcher(jTextField1.getText()).find()!=true && jTextField1.getText().length()==13){ 
+         else
+             JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+            
+         }
          if(jTextField1.isVisible()){
          IdNumberAcc=jTextField1.getText();
          }
-         CNP=jTextField2.getText();
         if(jButton2.getText().equals("DeleteAccount")){
-            if(ai.deleteAccount(IdNumberAcc, CNP))
+         if(!IdNumberAcc.equals("")){
+            if(am.deleteAccount(IdNumberAcc))
         {
             JOptionPane.showMessageDialog(this, "Account delete");
             jTextField1.setText("");
@@ -557,38 +572,38 @@ public SharedData data;
             optiuni();
         }
         }
-         }else
-             JOptionPane.showMessageDialog(this, "Gresala");
-         if(p.matcher(jTextField1.getText()).find()!=true && jTextField1.getText().length()==13){ 
-            if(jButton2.getText().equals("Afisare")){
-            ArrayList<Account> c=new ArrayList<Account>();
-            c=ai.printAccount(CNP);
-            DefaultTableModel model= new DefaultTableModel();
-            model.addColumn("IdNumberAcc");
-            model.addColumn("AmmountOfMoney");
-            model.addColumn("DataCreation");
-            model.addColumn("CNP");
-            jTable1 = new JTable(model);
-            for(Account client :c )
-            model.addRow(new Object[]{client.getIdNrAccount(),client.getAmmountOfMoney(),client.getDataCreation(),client.getCnp(),client.getIdType()}); 
-         
+         else
+             JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
         }
+            CNP=jTextField2.getText();
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("AmmountOfMoney");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("DataCreation");
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("CNP");
+            TableColumn tc=new TableColumn();
+            tc.setHeaderValue("IDType");
+            jTable1.getColumnModel().addColumn(tc);
+            DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+           if(jButton2.getText().equals("Afisare")){
+            if(!CNP.equals("")){
+            ArrayList<ArrayList<String>> c=am.printAccount(CNP);
+            for(ArrayList<String> client :c )
+            model.addRow(new Object[]{client.get(0),client.get(1),client.get(2),client.get(3)}); 
+            }
+            else
+             JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
         }
-        else
-            JOptionPane.showMessageDialog(this, "Exista litere in CNP variable");
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String IdNumberAcc1=null;
         String IdNumberAcc2=null;
         Float suma=0.0f;
-        AccountInfo ai=new AccountInfo();
+        AccountManager ai=new AccountManager();
         data=new SharedData();
+        if(!jTextField1.getText().equals("") && !jTextField2.getText().equals("") && !jTextField4.getText().equals("")){
         IdNumberAcc1=jTextField1.getText();
         IdNumberAcc2=jTextField2.getText();
-        Pattern p = Pattern.compile("([a-z])");
-        Matcher m =null;
-        if(p.matcher(jTextField4.getText()).find()!=true){
         suma=Float.parseFloat(jTextField4.getText());
         if(ai.tranzactie(IdNumberAcc1, IdNumberAcc2, suma, data.getId_Employee()))
         {
@@ -605,36 +620,41 @@ public SharedData data;
         }
         }
         else
-            JOptionPane.showMessageDialog(this, "Gresala");
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String IdNumberAcc1=null;
-        Float suma=0.0f;
-        AccountInfo ai=new AccountInfo();
-        IdNumberAcc1=jTextField1.getText();
-        data=new SharedData();
-        Pattern p = Pattern.compile("([a-z])");
-        Matcher m =null;
-        if(p.matcher(jTextField2.getText()).find()!=true){
-        suma=Float.parseFloat(jTextField2.getText());
-        String op=jComboBox1.getSelectedItem().toString();
-        if(ai.payUtilities(IdNumberAcc1, suma,op,data.getId_Employee()))
-        {
-            JOptionPane.showMessageDialog(this, "Plata efectuata");
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField4.setText("");
-            optiuni();
-        }
+        try {
+            String IdNumberAcc1=null;
+            Float suma=0.0f;
+            AccountManager ai=new AccountManager();
+            if(!jTextField1.getText().equals("") && !jTextField2.getText().equals("") && !jComboBox1.getSelectedItem().toString().equals("")){
+            IdNumberAcc1=jTextField1.getText();
+            data=new SharedData();
+            suma=Float.parseFloat(jTextField2.getText());
+            String op=jComboBox1.getSelectedItem().toString();
+            String cnp = null;
+            int type = 0;
+            if(ai.payUtilities(IdNumberAcc1, suma,op,data.getId_Employee(),type,cnp))
+            {
+                JOptionPane.showMessageDialog(this, "Plata efectuata");
+                jTextField1.setText("");
+                jTextField2.setText("");
+                jTextField4.setText("");
+                optiuni();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Plata nu s-a putut realiza");
+                optiuni();
+            }
+            }
         else
-        {
-            JOptionPane.showMessageDialog(this, "Plata nu s-a putut realiza");
-            optiuni();
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+        } catch (SQLException ex) {
+            Logger.getLogger(BankOperation.class.getName()).log(Level.SEVERE, null, ex);
         }
-        }
-        else
-            JOptionPane.showMessageDialog(this, "Gresala");
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -642,12 +662,12 @@ public SharedData data;
         String parola=null;
         String type=null;
         int Id_Employee=1 + (int)(Math.random() * 10000);
-        username=jTextField5.getText();
-        parola=jTextField6.getText();
-        type=jTextField7.getText();
-        EmployeesInfo l=new EmployeesInfo();
-        Employees e=new Employees(Id_Employee,username,parola,type);
-        if(l.insertEmployee(e))
+        if(!jTextField3.getText().equals("") &&  !jTextField5.getText().equals("") && !jTextField6.getText().equals("")){
+        username=jTextField3.getText();
+        parola=jTextField5.getText();
+        type=jTextField6.getText();
+        EmployeesManager l=new EmployeesManager();
+        if(l.insertEmployee(Id_Employee, username, parola, type))
         {
             JOptionPane.showMessageDialog(this, " Employee add");
             jTextField5.setText("");
@@ -658,6 +678,9 @@ public SharedData data;
         {
             JOptionPane.showMessageDialog(this, "Employee existent sau nu s-a putut face add");
         }
+        }
+        else
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -665,12 +688,12 @@ public SharedData data;
         String parola=null;
         String type=null;
         int Id_Employee=1 + (int)(Math.random() * 10000);
-        username=jTextField5.getText();
-        parola=jTextField6.getText();
-        type=jTextField7.getText();
-        EmployeesInfo l=new EmployeesInfo();
-        Employees e=new Employees(Id_Employee,username,parola,type);
-        if(l.insertEmployee(e))
+        if(!jTextField3.getText().equals("") &&  !jTextField5.getText().equals("") && !jTextField6.getText().equals("")){
+        username=jTextField3.getText();
+        parola=jTextField5.getText();
+        type=jTextField6.getText();
+        EmployeesManager l=new EmployeesManager();
+        if(l.updateEmployee(Id_Employee, username, parola, type))
         {
             JOptionPane.showMessageDialog(this, " Employee update");
             jTextField5.setText("");
@@ -679,13 +702,17 @@ public SharedData data;
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Employee existent sau nu s-a putut face update");
+            JOptionPane.showMessageDialog(this, "Employee inexistent sau nu s-a putut face update");
         }
+        }
+        else
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if(!jTextField3.getText().equals("")){
         int Id_Employee=Integer.parseInt(jTextField3.getText());
-        EmployeesInfo l=new EmployeesInfo();
+        EmployeesManager l=new EmployeesManager();
         if(l.deleteEmployee(Id_Employee))
         {
             JOptionPane.showMessageDialog(this, " Employee delete");
@@ -695,14 +722,18 @@ public SharedData data;
         {
             JOptionPane.showMessageDialog(this, "Employee nu exista sau nu s-a putut realiza stergerea");
         }
+    }
+    else
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        if(!jTextField3.getText().equals("") && !jTextField5.getText().equals("") && !jTextField6.getText().equals("")){
         int idEmployee=Integer.parseInt(jTextField3.getText());
         String data1=jTextField5.getText();
         String data2=jTextField6.getText();
             OperatiuniBancare bo=new OperatiuniBancare();
-            ArrayList<ProcessOp> c=new ArrayList<ProcessOp>();
+            ArrayList<ArrayList<String>> c=new ArrayList<ArrayList<String>>();
         try {
             c=bo.readOperatiuni(idEmployee, data1, data2);
         } catch (SQLException ex) {
@@ -715,8 +746,13 @@ public SharedData data;
             model.addColumn("Data");
             model.addColumn("Operatia");
             jTable2 = new JTable(model);
-            for(ProcessOp client :c )
-            model.addRow(new Object[]{client.getIdEmployee(),client.getDataOperation(),client.getOp()});
+            for(ArrayList<String> client :c )
+            model.addRow(new Object[]{client.get(0),client.get(1),client.get(3)});
+            
+        }
+        else
+            JOptionPane.showMessageDialog(this, "nu ai adugat informatii");
+        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void optiuni()
@@ -743,23 +779,28 @@ public SharedData data;
             jTextField4.setText("");
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
             }
             if(response==1)
             {
             jLabel1.setText("CNP");
             jLabel2.setText("Nume");
             jLabel4.setText("Adresa");
-            jLabel5.setText("Add Client");
+            jLabel5.setText("Update Client");
             jButton1.setVisible(true);
-            jButton1.setText("Update");
+            jButton1.setText("UpdateClient");
             jButton2.setVisible(false);
             jButton3.setVisible(false);
             jButton4.setVisible(false);
             jComboBox1.setVisible(false);
             jTable1.setVisible(false);
+            jScrollPane1.setVisible(false);
             jTextField4.setText("");
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
             }
             if(response==2)
             {
@@ -777,6 +818,8 @@ public SharedData data;
             jTextField2.setVisible(false);
             jTextField1.setText("");
             jTable1.setVisible(true);
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
                 
             }
             if(response==3)
@@ -805,23 +848,27 @@ public SharedData data;
             jTextField4.setText("");
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
             }
             if(response==1)
             {
-            jLabel1.setText("IdAccount");
+            jLabel1.setText("CNP");
             jLabel2.setText("AmountMoney");
-            jLabel4.setVisible(false);
+            jLabel4.setText("IdType");
+            jLabel9.setText("IdAccount");
             jLabel5.setText("Update Account");
             jButton1.setVisible(false);
-            jButton2.setText("UpdateAccount");
             jButton2.setVisible(true);
+            jButton2.setText("UpdateAccount");
             jButton3.setVisible(false);
             jButton4.setVisible(false);
             jComboBox1.setVisible(false);
             jTable1.setVisible(false);
-            jTextField4.setVisible(false);
+            jTextField4.setText("");
             jTextField2.setText("");
             jTextField1.setText("");
+            jTextField8.setText("");
             }
             if(response==2)
             {
@@ -839,6 +886,8 @@ public SharedData data;
             jTextField4.setVisible(false);
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
             }
              if(response==3)
             {
@@ -856,6 +905,8 @@ public SharedData data;
             jTextField4.setVisible(false);
             jTextField2.setText("");
             jTextField1.setVisible(false);
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
             }
             if(response==4)
             {
@@ -878,6 +929,8 @@ public SharedData data;
             jTextField4.setText("");
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
         }
              if(data.getResponse()==3)
         {
@@ -897,6 +950,8 @@ public SharedData data;
             jTextField4.setVisible(false);
             jTextField2.setText("");
             jTextField1.setText("");
+            jLabel9.setVisible(false);
+            jTextField8.setVisible(false);
         }
             
     }
@@ -1035,6 +1090,7 @@ public SharedData data;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1051,5 +1107,6 @@ public SharedData data;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

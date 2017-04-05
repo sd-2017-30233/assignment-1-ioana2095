@@ -1,9 +1,9 @@
 create database Bank;
 use Bank;
 
-create table Employeess
-(ID_Employees int PRIMARY KEY,
-UserNume nvarchar(50) UNIQUE,
+create table Employees
+(UserNume nvarchar(50) UNIQUE,
+ID_Employees int PRIMARY KEY,
 Password nvarchar(50),
 UserType nvarchar(50));
 
@@ -22,7 +22,7 @@ IdType int);
 
 
 create table Process
-(ID_Employees int PRIMARY KEY,
+(ID_Employees int,
 IdNumberAcc nvarchar(50),
 AmmountOfMoney float,
 DataOperation date,
@@ -47,9 +47,9 @@ on update cascade
 on delete cascade;
 
 alter table EmpClient
-add constraint fk_EmpClient_Employeess
+add constraint fk_EmpClient_Employees
 foreign key (ID_Employees)
-references Employeess(ID_Employees)
+references Employees(ID_Employees)
 on update cascade
 on delete cascade;
 
@@ -74,7 +74,7 @@ references Client(CNP)
 on update cascade
 on delete cascade;
 
-
+use Bank;
 insert into Client (CNP, Nume, IDCardNumber, Adress) values ('2831129332306', 'Cheryl', '675920835', '5 Paget Center');
 insert into Client (CNP, Nume, IDCardNumber, Adress) values ('2920828524661', 'Anne', '677197070', '4 Laurel Point');
 insert into Client (CNP, Nume, IDCardNumber, Adress) values ('1880224247834', 'Carl', '357176736', '1191 Katie Park');
@@ -84,14 +84,16 @@ insert into Client (CNP, Nume, IDCardNumber, Adress) values ('2770409113686', 'K
 insert into Client (CNP, Nume, IDCardNumber, Adress) values ('2810314337148', 'Elizabeth', '491169007', '4732 Iowa Plaza');
 insert into Client (CNP, Nume, IDCardNumber, Adress) values ('2960220416111', 'Emily', '201870969', '290 Annamark Center');
 
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (1, 'rfranklin0', 'g9mNRKll', 'employee');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (2, 'mlong1', '5J2sXGcfpRE', 'admin');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (3, 'ajohnston2', 'ZmRmfkVqH97', 'employee');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (4, 'dthomas3', 's90qWyf9U', 'employee');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (5, 'ethompson4', 'l9iciru51xb', 'employee');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (6, 'sevans5', 'bnbjelrV80bc', 'employee');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (7, 'bbanks6', 'Mga5p8fPnx', 'admin');
-insert into Employees (ID_Employees, UserNume, Password, UserType) values (8, 'jhenderson7', 'l3gqQMJxULV', 'employee');
+use Bank;
+insert into Employees (UserNume,ID_Employees,  Password, UserType) values ('rfranklin0','1', 'g9mNRKll', 'employee');
+insert into Employees (UserNume,ID_Employees, Password, UserType) values ('mlong1','2',  '5J2sXGcfpRE', 'admin');
+insert into Employees (UserNume,ID_Employees, Password, UserType) values ('ajohnston2','3',  'ZmRmfkVqH97', 'employee');
+insert into Employees (UserNume,ID_Employees,  Password, UserType) values ('dthomas3','4',  's90qWyf9U', 'employee');
+insert into Employees (UserNume,ID_Employees, Password, UserType) values ('ethompson4','5',  'l9iciru51xb', 'employee');
+insert into Employees (UserNume,ID_Employees,  Password, UserType) values ('sevans5','6', 'bnbjelrV80bc', 'employee');
+insert into Employees (UserNume,ID_Employees, Password, UserType) values ('bbanks6','7',  'Mga5p8fPnx', 'admin');
+insert into Employees (UserNume,ID_Employees,  Password, UserType) values ('jhenderson7','8',  'l3gqQMJxULV', 'employee');
+insert into Employees (UserNume,ID_Employees,  Password, UserType) values ('maria23','35',  '123456', 'employee');
 
 insert into Account (IdNumberAcc, AmmountOfMoney, DataCreation, CNP, IdType) values ('RO3550432360829223BT', 255.82, '2/15/2017', '2831129332306', 1);
 insert into Account (IdNumberAcc, AmmountOfMoney, DataCreation, CNP, IdType) values ('RO201405344303282BT', 1035.42, '8/30/2016', '2920828524661', 2);
@@ -121,12 +123,13 @@ insert into TypeA (IdType ,TypeA ) values (1,'economii');
 insert into TypeA (IdType ,TypeA ) values (2,'obisnuit');
 insert into TypeA (IdType ,TypeA ) values (3,'de credit');
 
+use Bank;
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2831129332306','Creare','6/5/2016',1);
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2920828524661','Creare','6/9/2016',1);
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('1880224247834','Creare','12/9/2016',3);
-insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('1980817097170','Creare','23/1/2017',1);
+insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('1980817097170','Creare','12/1/2017',1);
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('1720208298159','Creare','3/6/2016',3);
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2770409113686','Creare','12/5/2016',6);
-insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2810314337148','Creare','30/11/2016',6);
+insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2810314337148','Creare','3/11/2016',6);
 insert into EmpClient(CNP,Operatia,DataOp ,ID_Employees ) values ('2960220416111','Creare','4/2/2017',8);
 
